@@ -8,7 +8,7 @@ describe("shabu price ", () => {
         mock.onPost('/getPrice', {
             orderId: 1,
             tableNo: 1,
-            person: 2,
+            person: 8,
         }).reply(200, {
             statusCode: 1,
             status: 'success',
@@ -19,8 +19,8 @@ describe("shabu price ", () => {
             }
         })
 
-        const expectedResult = 748;
-        const result = await Shabu(1, 1, 2)
+        const expectedResult = 2244;
+        const result = await Shabu(1, 1, 8)
 
         expect(result.net).toEqual(expectedResult);
     })
